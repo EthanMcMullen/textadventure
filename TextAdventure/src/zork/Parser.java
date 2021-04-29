@@ -1,13 +1,14 @@
 package zork;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Parser {
   private CommandWords commands; // holds all valid command words
+  private Scanner in;
 
   public Parser() {
     commands = new CommandWords();
+    in = new Scanner(System.in);
   }
 
   public Command getCommand() throws java.io.IOException {
@@ -16,7 +17,6 @@ public class Parser {
 
     System.out.print("> "); // print prompt
 
-    Scanner in = new Scanner(System.in);
     inputLine = in.nextLine();
 
     words = inputLine.split(" ");
